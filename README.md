@@ -1,6 +1,7 @@
 ##### 소아 사시 진단을 위한 스마트폰 기반 각막 빛 반사 검사 시스템 구현 및 VR 비전테라피  {[[PAPER](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11724447)]}
 
 2023 강릉원주대학교 캡스톤디자인 대상 🥇
+
 2023 전남대학교 창의적종합설계경진대회 동상 🥉
 
 [![시연 영상](https://img.youtube.com/vi/myyhD2bFFIw/0.jpg)](https://www.youtube.com/watch?v=myyhD2bFFIw)
