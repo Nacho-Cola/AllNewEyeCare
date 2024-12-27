@@ -1,7 +1,8 @@
 from sqlalchemy import *
 from sqlalchemy.orm import sessionmaker
+from models import Base
 
-DB_URL = 'mysql+pymysql://root:root@localhost:3306/test_base'
+DB_URL = 'sqlite:///sql.db'
 
 class engineconn:
 
@@ -16,3 +17,10 @@ class engineconn:
     def connection(self):
         conn = self.engine.connect()
         return conn
+    
+# engineconn 인스턴스 생성
+engine_connection = engineconn()
+
+# 테이블 생성
+Base.metadata.create_all(engine_connection.engine)  # 테이블이 존재하지 않으면 생성
+print("Database schema created successfully!")

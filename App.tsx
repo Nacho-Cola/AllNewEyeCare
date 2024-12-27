@@ -44,7 +44,8 @@ type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-const URL = "http://58.234.7.105:5454"
+
+const URL = "http://<Your-IPv4-Address>:8000";
 
 import UnityView from '@azesmway/react-native-unity';
 
@@ -116,7 +117,7 @@ function blobToBase64(blob:Blob){
 }
 
 const get_yolo = async (image: any) => { 
-  fetch( "http://58.234.7.105:5454/detect/", {
+  fetch( URL + "/detect/", {
     method: 'post',
     body: JSON.stringify({ "image" : image }),
     headers: {
@@ -223,7 +224,7 @@ function Login({navigation}){
   const [PW, getUserPassword] = useState('');
   var logined :number = 0
   const log_in = (id:string, pw:string)=>{
-    fetch("http://58.234.7.105:5454/api/user/login",{
+    fetch(URL + "/api/user/login",{
       method: 'post',
         body:qs.stringify({
           username: id,
@@ -296,7 +297,7 @@ function SignIn({navigation}){
   var is_created:Number = 0
 
   function post_user(id:string ,pw1:string ,pw2:string ,em:string ) {
-    fetch("http://58.234.7.105:5454/api/user/create",{
+    fetch(URL + "/api/user/create",{
         method: 'post',
         body:JSON.stringify({
           username: id,
