@@ -1,22 +1,22 @@
 ## 소아 사시 진단을 위한 스마트폰 기반 각막 빛 반사 검사 시스템 구현 및 VR 비전테라피  [[PAPER](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11724447)]
 
-2023 강릉원주대학교 캡스톤디자인 대상 🥇
-
-2023 전남대학교 창의적종합설계경진대회 동상 🥉
+### 수상 경력
+- **2023 강릉원주대학교 캡스톤디자인 대상 🥇**
+- **2023 전남대학교 창의적종합설계경진대회 동상 🥉**
 
 [![시연 영상](https://img.youtube.com/vi/myyhD2bFFIw/0.jpg)](https://www.youtube.com/watch?v=myyhD2bFFIw)
 
- EyeCare는 소아사시의 정도를 모니터링과 동시에 YouTube 링크를 통해 영상을 시청 할 수 있는 교육, 엔터 플랫폼입니다.  각막 빛 반사 검사를 구현한 알고리즘을 통해 B2B 아이디어를 고안하였습니다. 
- Unity 를 통한 VR 비전테라피를 제작하였으며, 스마트폰을 통해 사용 가능합니다.
+EyeCare는 소아 사시의 정도를 모니터링하고 YouTube 링크를 통해 영상을 시청할 수 있는 교육 및 엔터테인먼트 플랫폼입니다.  
+각막 빛 반사 검사 알고리즘을 통해 **B2B 아이디어**를 고안하였으며, Unity를 활용한 VR 비전테라피를 스마트폰으로 구현하였습니다.
 
-
+---
 
 ## 기술 스택
 
 ### 1. **프론트엔드**
 - **React Native**
   - iOS 전용 지원
-  - `react-native-vision-camera`를 활용한 카메라 기능 구현
+  - `react-native-vision-camera`를 활용한 카메라 기능
   - `react-native-youtube-iframe`를 활용한 YouTube 동영상 플레이어
   - `@azesmway/react-native-unity`를 통한 Unity 뷰 통합
 - **State Management**
@@ -26,13 +26,13 @@
 
 ### 2. **백엔드**
 - **FastAPI**
-  - Python 기반의 비동기 웹 프레임워크
+  - Python 기반 비동기 웹 프레임워크
   - RESTful API 설계
-  - FastAPI의 의존성 주입 (`Depends`) 기능을 활용한 데이터베이스 세션 관리
+  - FastAPI의 의존성 주입(`Depends`) 기능을 활용한 데이터베이스 세션 관리
 - **데이터베이스**
   - SQLite
     - 경량화된 파일 기반 데이터베이스
-    - SQLAlchemy ORM을 사용하여 테이블 정의 및 쿼리 수행
+    - SQLAlchemy ORM을 사용한 테이블 정의 및 쿼리 수행
 - **Authentication**
   - OAuth2 및 JWT(Json Web Token) 기반 인증
   - `jose` 라이브러리를 사용한 JWT 토큰 생성 및 검증
@@ -83,9 +83,10 @@
 ---
 
 ## 주요 기능
+
 - **실시간 객체 탐지**
   - React Native의 카메라를 사용하여 사진 촬영
-  - YOLOv8을 통해 탐지 결과를 반환
+  - YOLOv8을 통해 탐지 결과 반환
 - **사용자 인증**
   - 기본 사용자 계정:
     - **아이디**: `admin`
@@ -103,6 +104,7 @@
 ## 설치 및 실행 방법
 
 ### 1. **백엔드(FastAPI)**
+
 ```bash
 # 가상 환경 생성
 python -m venv venv
@@ -112,15 +114,25 @@ source venv/bin/activate  # Windows는 venv\Scripts\activate
 pip install -r requirements.txt
 
 # 서버 실행
-python main.py 
-
-FastAPI 서버를 실행한 후, 자신의 IPv4 주소를 React Native 앱의 const URL에 설정해야 합니다.
-```
-  const URL = "http://<Your-IPv4-Address>:8000";
+python main.py
 ```
 
+> **주의:** FastAPI 서버를 실행한 후, **자신의 IPv4 주소**를 React Native 앱의 `const URL`에 설정해야 합니다.
+
+```javascript
+const URL = "http://<Your-IPv4-Address>:8000";
+```
+
+---
+
+### 2. **프론트엔드(React Native)**
+
+```bash
 # 패키지 설치
 npm install
 
 # iOS 앱 실행
 npx react-native run-ios
+```
+
+> **주의:** 본 애플리케이션은 **iOS 전용**으로 설계되었습니다. Android 지원은 포함되지 않습니다.
