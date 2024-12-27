@@ -44,6 +44,20 @@ EyeCare는 소아 사시의 정도를 모니터링하고 YouTube 링크를 통�
   - `jose` 라이브러리를 사용한 JWT 토큰 생성 및 검증
   - 비밀번호 해싱에 `passlib` 사용
 
+
+---
+
+
+### 3. **VR 비전테라피**
+
+- **Unity**
+  - 3D 게임 및 가상현실 콘텐츠 제작을 위한 엔진
+  - VR 비전테라피 구현
+  - Unity 프로젝트는 [GitHub Unity Builds](https://github.com/Nacho-Cola/AllNewEyeCare/tree/main/unity/builds/ios)에서 확인 가능
+- **React Native Unity Integration**
+  - `@azesmway/react-native-unity`를 활용한 Unity와 React Native 통합
+  - Unity 콘텐츠를 React Native 앱에서 렌더링 가능
+
 ---
 
 ### 3. **딥러닝 모델**
